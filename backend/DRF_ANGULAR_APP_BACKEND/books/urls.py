@@ -7,5 +7,6 @@ router = routers.DefaultRouter()
 router.register(r'books', views.BookViewSet)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('book-categories/', views.BooksCategoryView.as_view(), name='book-categories')
 ]

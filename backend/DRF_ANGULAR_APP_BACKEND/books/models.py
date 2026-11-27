@@ -4,7 +4,7 @@ from django.db import models
 class Book(models.Model):
     CATEGORY_CHOICES = (
         ('Thriller', 'Thriller'),
-        ('Fqantasy', 'Fantasy'),
+        ('Fantasy', 'Fantasy'),
         ('Novel', 'Novel')
     )
     
