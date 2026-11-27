@@ -1,6 +1,7 @@
+from django.shortcuts import render
 from .models import Book
 from rest_framework import viewsets
-from .serializers import BookSerializer
+from books.serializers import BookSerializer
 from rest_framework.permissions import AllowAny
 
 # Create your views here.
