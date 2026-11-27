@@ -18,4 +18,8 @@ export class ApiCall {
   deleteBook(bookId: number): Observable<void> {
     return this.http.delete<void>(this.apiUrl + `books/${bookId}/`);
   }
+
+  addBook(newBook: Book): Observable<Book[]> {
+    return this.http.post<Book[]>(this.apiUrl + 'books/', newBook);
+  }
 }

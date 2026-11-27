@@ -1,11 +1,12 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { ApiCall } from '../../services/api-call';
 import { Book } from '../../models/book';
 
 @Component({
   selector: 'app-books-list',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './books-list.html',
   styleUrl: './books-list.css',
 })

@@ -1,0 +1,21 @@
+<div class="container">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" formControlName="title" placeholder="" required>
+            <div *ngIf="bookForm.get('title')?.hasError('required') && bookForm.get('title')?.touched" class="text-danger">Title is required</div>
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Book Author</label>
+            <input type="text" class="form-control" id="author" formControlName="author" placeholder="" required>
+            <div *ngIf="bookForm.get('author')?.hasError('required') && bookForm.get('author')?.touched" class="text-danger">Author is required</div>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Book Category</label>
+            <input type="text" class="form-control" id="category" formControlName="category" placeholder="" required>
+            <div *ngIf="bookForm.get('category')?.hasError('required') && bookForm.get('category')?.touched" class="text-danger">Category is required</div>
+        </div>
+        <button type="button" class="btn btn-info" (click)="goBack()">Back</button>
+        <button [disabled]="!bookForm.valid" type="submit" class="btn btn-primary" type="submit">Add New Book</button>
+    </form>
+</div>
