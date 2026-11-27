@@ -14,4 +14,8 @@ export class ApiCall {
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiUrl + 'books/');
   }
+
+  deleteBook(bookId: number): Observable<void> {
+    return this.http.delete<void>(this.apiUrl + `books/${bookId}/`);
+  }
 }

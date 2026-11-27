@@ -6,15 +6,19 @@
       <th scope="col">Title</th>
       <th scope="col">Category</th>
       <th scope="col">Timestamp</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let book of books">
+    <tr *ngFor="let book of books()">
       <th scope="row">{{ book.id }}</th>
       <td>{{ book.author }}</td>
       <td>{{ book.title }}</td>
       <td>{{ book.category }}</td>
       <td>{{ book.timestamp }}</td>
+      <td>
+        <button (click)="deleteBook(book.id)" class="btn btn-warning">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>
