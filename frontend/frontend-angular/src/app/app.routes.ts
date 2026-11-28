@@ -5,5 +5,6 @@ import { NewBook } from './pages/new-book/new-book';
 
 export const routes: Routes = [
     { path: '', component: BooksList },
-    { path: 'new-book', component: NewBook }
+    { path: 'new-book', component: NewBook },
+    { path: 'new-book/:id', component: NewBook }
 ];

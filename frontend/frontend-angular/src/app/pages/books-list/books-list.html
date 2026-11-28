@@ -19,6 +19,7 @@
       <td>{{ book.timestamp }}</td>
       <td>
         <button (click)="deleteBook(book.id)" class="btn btn-warning">Delete</button>
+        <button class="btn btn-info" (click)="updateBook(book.id)">Update</button>
       </td>
     </tr>
   </tbody>

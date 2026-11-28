@@ -22,4 +22,12 @@ export class ApiCall {
   addBook(newBook: Book): Observable<Book[]> {
     return this.http.post<Book[]>(this.apiUrl + 'books/', newBook);
   }
+
+  getBookById(bookId: string): Observable<Book> {
+    return this.http.get<Book>(this.apiUrl + `books/${bookId}/`);
+  }
+
+  updateBook(bookId: string, updatedBook: Book): Observable<Book> {
+    return this.http.put<Book>(this.apiUrl + `books/${bookId}/`, updatedBook);
+  }
 }

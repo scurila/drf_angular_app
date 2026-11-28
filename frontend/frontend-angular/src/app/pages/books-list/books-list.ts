@@ -1,6 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ApiCall } from '../../services/api-call';
 import { Book } from '../../models/book';
 
@@ -15,7 +15,8 @@ export class BooksList implements OnInit {
   books = signal<Book[]>([]);
 
   constructor(
-    private apiService: ApiCall
+    private apiService: ApiCall,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -45,5 +46,10 @@ export class BooksList implements OnInit {
         console.error('Error deleting book:', err);
       }}
     );
+  }
+
+  updateBook(bookId: number) {
+    // Implementation for updating a book
+    this.router.navigate(['/new-book', bookId]);
   }
 }

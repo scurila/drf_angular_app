@@ -12,10 +12,14 @@
         </div>
         <div class="mb-3">
             <label for="category" class="form-label">Book Category</label>
-            <input type="text" class="form-control" id="category" formControlName="category" placeholder="" required>
+            <select type="text" class="form-control fom-select" id="category" formControlName="category" placeholder="" required>
+                <option *ngFor="let category of categories" [value]="category">
+                    {{ category }}
+                </option>
+            </select>
             <div *ngIf="bookForm.get('category')?.hasError('required') && bookForm.get('category')?.touched" class="text-danger">Category is required</div>
         </div>
         <button type="button" class="btn btn-info" (click)="goBack()">Back</button>
-        <button [disabled]="!bookForm.valid" type="submit" class="btn btn-primary" type="submit">Add New Book</button>
+        <button [disabled]="!bookForm.valid" type="submit" class="btn btn-primary" type="submit">{{ isUpdateMode ? 'Update Book' : 'Add New Book' }}</button>
     </form>
 </div>
